@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#111827" />
+    <title>多计时器 Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Multi Timer</p>
+          <h1>多计时器</h1>
+        </div>
+        <button class="icon-button" id="soundToggle" type="button" aria-label="开启声音提醒" title="声音提醒">
+          <span aria-hidden="true">🔔</span>
+        </button>
+      </header>
+
+      <section class="voice-panel" aria-label="语音控制">
+        <div>
+          <p class="panel-title">语音控制</p>
+          <p id="voiceStatus">可说：第一个计时器归零 / 第二个重新开始 / 开始第三个</p>
+        </div>
+        <button id="voiceToggle" class="primary-button" type="button">开启</button>
+      </section>
+
+      <section class="toolbar" aria-label="全局操作">
+        <button id="addTimer" type="button">新增计时器</button>
+        <button id="pauseAll" type="button">全部暂停</button>
+        <button id="resetAll" type="button">全部归零</button>
+      </section>
+
+      <section class="timers" id="timers" aria-live="polite"></section>
+    </main>
+
+    <template id="timerTemplate">
+      <article class="timer-card">
+        <div class="timer-head">
+          <input class="timer-name" type="text" aria-label="计时器名称" />
+          <button class="remove-button" type="button" aria-label="删除计时器" title="删除">×</button>
+        </div>
+
+        <div class="mode-row" role="group" aria-label="计时模式">
+          <button class="mode-button active" data-mode="countup" type="button">正计时</button>
+          <button class="mode-button" data-mode="countdown" type="button">倒计时</button>
+        </div>
+
+        <div class="time-display" aria-label="当前时间">00:00.0</div>
+
+        <div class="duration-row">
+          <label>
+            <span>分钟</span>
+            <input class="minutes-input" type="number" inputmode="numeric" min="0" max="999" value="5" />
+          </label>
+          <label>
+            <span>秒</span>
+            <input class="seconds-input" type="number" inputmode="numeric" min="0" max="59" value="0" />
+          </label>
+        </div>
+
+        <div class="quick-row" aria-label="快捷倒计时">
+          <button type="button" data-minutes="1">1m</button>
+          <button type="button" data-minutes="3">3m</button>
+          <button type="button" data-minutes="5">5m</button>
+          <button type="button" data-minutes="10">10m</button>
+        </div>
+
+        <div class="action-row">
+          <button class="start-button" type="button">开始</button>
+          <button class="lap-button" type="button">计次</button>
+          <button class="reset-button" type="button">归零</button>
+        </div>
+
+        <ol class="laps" aria-label="计次记录"></ol>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
