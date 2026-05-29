@@ -89,7 +89,7 @@ button:disabled {
   z-index: 1;
   width: min(100%, 1040px);
   margin: 0 auto;
-  padding: max(18px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+  padding: max(10px, env(safe-area-inset-top)) 10px max(18px, env(safe-area-inset-bottom));
 }
 
 .topbar {
@@ -97,7 +97,7 @@ button:disabled {
   align-items: end;
   justify-content: space-between;
   gap: 16px;
-  padding: 12px 2px 16px;
+  padding: 6px 2px 10px;
 }
 
 .eyebrow {
@@ -110,15 +110,15 @@ button:disabled {
 
 h1 {
   margin: 0;
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: 0;
 }
 
 .icon-button {
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   flex: 0 0 auto;
   border-radius: 50%;
   color: var(--tint);
@@ -172,30 +172,34 @@ h1 {
 }
 
 .voice-panel {
+  position: sticky;
+  top: 0;
+  z-index: 8;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  padding: 14px 14px 14px 16px;
-  border-radius: 22px;
-  margin-bottom: 12px;
+  gap: 10px;
+  padding: 10px 10px 10px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
 }
 
 .panel-title {
   margin: 0 0 3px;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
 }
 
 #voiceStatus {
   margin: 0;
   color: var(--secondary);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.35;
 }
 
 .primary-button {
   min-width: 64px;
+  min-height: 38px;
   padding: 0 16px;
   color: #fff;
   background: linear-gradient(145deg, rgba(0, 136, 255, 0.96), rgba(0, 92, 230, 0.86));
@@ -207,19 +211,19 @@ h1 {
 }
 
 .toolbar {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 5;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   overflow: hidden;
   padding: 3px;
-  border-radius: 18px;
-  margin-bottom: 14px;
+  border-radius: 16px;
+  margin-bottom: 10px;
 }
 
 .toolbar button {
+  min-height: 38px;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.18);
   font-size: 15px;
@@ -232,12 +236,13 @@ h1 {
 
 .timers {
   display: grid;
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .timer-card {
-  border-radius: 28px;
-  padding: 16px;
+  border-radius: 20px;
+  padding: 10px;
   transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -257,24 +262,24 @@ h1 {
 .quick-row,
 .action-row {
   display: grid;
-  gap: 10px;
+  gap: 6px;
 }
 
 .timer-head {
-  grid-template-columns: 1fr 38px;
+  grid-template-columns: 1fr 30px;
   align-items: center;
 }
 
 .timer-name {
   width: 100%;
-  min-height: 42px;
+  min-height: 32px;
   border: 0;
   border-bottom: 0.5px solid var(--separator);
   border-radius: 0;
   padding: 0;
   color: var(--text);
   background: transparent;
-  font-size: 21px;
+  font-size: 15px;
   font-weight: 750;
   outline: none;
 }
@@ -284,20 +289,20 @@ h1 {
 }
 
 .remove-button {
-  width: 34px;
-  height: 34px;
-  min-height: 34px;
+  width: 28px;
+  height: 28px;
+  min-height: 28px;
   justify-self: end;
   border-radius: 50%;
   color: var(--secondary);
   background: var(--control);
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1;
 }
 
 .mode-row {
   grid-template-columns: 1fr 1fr;
-  margin-top: 14px;
+  margin-top: 8px;
   padding: 2px;
   border-radius: 12px;
   background: rgba(118, 118, 128, 0.14);
@@ -305,11 +310,11 @@ h1 {
 }
 
 .mode-button {
-  min-height: 36px;
+  min-height: 30px;
   border-radius: 10px;
   color: var(--text);
   background: transparent;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -322,13 +327,13 @@ h1 {
 }
 
 .time-display {
-  margin: 17px 0 14px;
-  min-height: 84px;
+  margin: 9px 0 8px;
+  min-height: 46px;
   display: grid;
   place-items: center;
   color: var(--text);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.58);
-  font-size: clamp(48px, 16vw, 78px);
+  font-size: clamp(30px, 9.4vw, 48px);
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0;
@@ -341,24 +346,24 @@ h1 {
 
 .duration-row label {
   display: grid;
-  gap: 6px;
+  gap: 3px;
   color: var(--secondary);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 650;
 }
 
 .duration-row input {
   width: 100%;
-  min-height: 46px;
+  min-height: 34px;
   border: 0;
-  border-radius: 14px;
-  padding: 0 12px;
+  border-radius: 11px;
+  padding: 0 8px;
   color: var(--text);
   background: rgba(255, 255, 255, 0.42);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.62),
     inset 0 -1px 0 rgba(255, 255, 255, 0.18);
-  font-size: 19px;
+  font-size: 15px;
   font-weight: 700;
   outline: none;
   font-variant-numeric: tabular-nums;
@@ -370,26 +375,26 @@ h1 {
 
 .quick-row {
   grid-template-columns: repeat(4, 1fr);
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .quick-row button {
-  min-height: 38px;
+  min-height: 30px;
   border-radius: 999px;
   color: var(--tint);
   background: rgba(255, 255, 255, 0.42);
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 700;
 }
 
 .action-row {
-  grid-template-columns: 1.18fr 1fr 1fr;
-  margin-top: 14px;
+  grid-template-columns: 1fr 0.86fr 0.86fr;
+  margin-top: 8px;
 }
 
 .action-row button {
-  min-height: 48px;
-  font-size: 16px;
+  min-height: 36px;
+  font-size: 13px;
   font-weight: 750;
 }
 
@@ -413,13 +418,13 @@ h1 {
 }
 
 .laps {
-  max-height: 104px;
+  max-height: 68px;
   overflow: auto;
-  margin: 12px 0 0;
-  padding: 10px 0 0 24px;
+  margin: 8px 0 0;
+  padding: 7px 0 0 20px;
   border-top: 0.5px solid var(--separator);
   color: var(--secondary);
-  font-size: 14px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
 }
 
@@ -433,7 +438,8 @@ h1 {
   }
 
   .timers {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
   }
 }
 

@@ -122,7 +122,7 @@ function render() {
 
     node.querySelector(".remove-button").addEventListener("click", () => removeTimer(timer.id));
     node.querySelector(".start-button").addEventListener("click", () => toggleTimer(timer));
-    node.querySelector(".reset-button").addEventListener("click", () => resetTimer(timer, true));
+    node.querySelector(".reset-button").addEventListener("click", () => resetTimer(timer, false));
     node.querySelector(".lap-button").addEventListener("click", () => addLap(timer));
 
     node.querySelectorAll(".mode-button").forEach((button) => {
